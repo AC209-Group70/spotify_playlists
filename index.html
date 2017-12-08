@@ -254,7 +254,7 @@ tr:nth-child(even) {
          However, sometimes the score is bad. So we don't recommend this model.
     </p>
     
-    <h2> Generalized Linear Model (GLM)</h2>
+    <h2> Generalized Linear Model(209)</h2>
     <img src="data/error.png">
     <p> When we look closer into the linear regression result, we find that the errors are not 
         normally distributed, which prompt us to use the GLM.</p>
@@ -263,9 +263,10 @@ The data here follows a Poisson distribution because the response variable can b
     This model gives us relatively good results.</p>
     
     <br>
-    <p><strong> Here comes some classification models. We divide the class into 8.
-       (Class 1: 10 followers or less; Class 2: 100 followers or less; Class 3: 1000 followers; 
-        Class 4: 10000 followers ....)</strong></p>
+    <h2> Classification models</h2>
+    <p>We divide the class into 8.</p>
+    <p>(Class 1: 10 followers or less; Class 2: 100 followers or less; Class 3: 1000 followers; 
+        Class 4: 10000 followers ....)</p>
     
     <h2> Random Forest w/ Bag of Words </h2>
     <p>For the first classification model, we use the bag of words to do random forest. The dictionary include the 500 most frequent words. and we created a vector for each playlist.
