@@ -231,8 +231,31 @@ tr:nth-child(even) {
   <div class="w3-container" id="packages" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Model</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
   </div>
+    <h2> Linear Regression w/ one feature</h2>
+    <p>We just start with the simplest regression model, predicting the number of followers by the mean popularity of all tracks in the playlist. It seems to have low score, and we 
+        could take it as the baseline of our target model.</p>
+    <h2> Ridge Regression </h2>
+    <p>
+Misra, Divyam (divyam_misra@g.harvard.edu)
+The ridge regression gives an estimate which minimise the sum of square error as well penalizes large estimates. That is why, to improve our score on the dataset, we moved over to Ridge classification.</p>
+    <h2> Generalized Linear Model (GLM)</h2>
+    <img src="data/error.png">
+    <p>
+We have previously worked with regression models where the response variable is quantitative and normally distributed. But the data we have here for spotify playlists, doesn't have normally distributed response variable. The response variable 'followers' is discrete and the error terms do not follow normal distribution hence they can be modeled with generalized linear models.
+The data here follows a Poisson distribution because the response variable can be counted as whole number, occurences are independent, i.e. one playlist doesnt diminish or increase the chance of other playlist having more number of followers.</p>
+    
+    <h2> Random Forest w/ Baf of Words </h2>
+    <p>For the first classification model, I use bag of words to do random forest. The dictionary include the 500 most frequent words. and I created a vector for each playlist.
+    </p>
+    <h2> Multi-logistic Regression</h2>
+    <p>The second classification model is a logistic regression model that uses all the quantitative feature from spotipy API.
+    </p>
+    <h2> Meta Model: combine RF and Multi-logistic</h2>
+    <p>The third classification model is a combination of two models. The weight of these two models is assigned using logistic regression
+    </p>
+    <h2>Neural Network	</h2>
+    <p>The fourth classification model is neural network with dropout layers. The input is all the features used in the first two models combined.</p>
   <table>
   <tr>
   	<th>Approach</th>
@@ -282,6 +305,12 @@ tr:nth-child(even) {
     <td> 0.37</td>
   </tr>
 </table>
+<a href="src/Model.ipynb">Regression Model Details</a>
+<a href="src/classification_model.ipynb">Classification Model Details</a>
+
+<br><br>
+<a href="src/final_milestone.ipynb">Report Details</a>
+
 
 <!-- End page content -->
 </div>
