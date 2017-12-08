@@ -10,6 +10,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 </style>
 <body>
 
@@ -80,6 +95,55 @@ body {font-size:16px;}
     <hr style="width:50px;border:5px solid red" class="w3-round">
     <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
   </div>
+  table>
+  <tr>
+  	<th>Approach</th>
+    <th>Model</th>
+    <th>Score</th>
+  </tr>
+  <tr>
+    <td rowspan="6">Regression</td>
+    <td>Linear Regression w/ one feature</td>
+    <td>0.23</td>
+  </tr>
+  <tr>
+    <td>Linear Regression w/ all features</td>
+    <td>0.36</td>
+  </tr>
+  <tr>
+    <td>Ridge Regression</td>
+    <td>0.45</td>
+  </tr>
+  <tr>
+    <td>LASSO Regression</td>
+    <td>0.46</td>
+  </tr>
+  <tr>
+    <td>Polynomial Regression w/ degree 2</td>
+    <td>0.40</td>
+  </tr>
+  <tr>
+    <td>Generalized Linear Model</td>
+    <td>0.44</td>
+  </tr>
+  <tr>
+  	<td rowspan="4">Classification</td>
+    <td> Random Forest w/ Bag of words</td>
+    <td> x.xx</td>
+  </tr>
+  <tr>
+    <td> Multi-logistic Regression</td>
+    <td> x.xx</td>
+  </tr>
+    <tr>
+    <td> Metaxxxx:Random Forest and multi-logistic</td>
+    <td> x.xx</td>
+  </tr>
+  <tr>
+    <td> Neural Network</td>
+    <td> x.xx</td>
+  </tr>
+</table>
 
 <!-- End page content -->
 </div>
