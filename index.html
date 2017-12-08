@@ -85,8 +85,101 @@ tr:nth-child(even) {
     dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
-    <p><b>Our designers are thoughtfully chosen</b>:</p>
-  </div>
+    <table class="tg">
+  <tr>
+    <th class="tg-yw4l">Key</th>
+    <th class="tg-yw4l">Value Type</th>
+    <th class="tg-yw4l">Value Description</th>
+    <th class="tg-yw4l">Feature Engineering</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">followers</td>
+    <td class="tg-yw4l">int</td>
+    <td class="tg-yw4l">Number of Followers: from 0 to inf, indicate how many people follow this playlist.</td>
+    <td class="tg-yw4l">Probably need to do some log transformation later.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">name</td>
+    <td class="tg-yw4l">string</td>
+    <td class="tg-yw4l">Name of the playlist.</td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">acous_mean<br><br>acous_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Acousticness: A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of acousticness for all track in the playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">artist_pop_mean<br><br>artist_pop_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Popularity (Artist): How popular this artist is and measured from 0.0 to 100.0. 100.0 represents most popular.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of popularity for all artists in each track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">avaiable_market</td>
+    <td class="tg-yw4l">int</td>
+    <td class="tg-yw4l">The number of available markets: how many possible markets can download/listen to this playlist.</td>
+    <td class="tg-yw4l">Convert lists of available markets to numbers, and get the maximum number of market for all tracks in the playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">dance_mean<br><br>dance_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of danceability for all track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">energy_mean<br><br>energy_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of energy for all track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">instru_mean<br><br>instru_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Instrumentalness: Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of instrumentalness for all track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">live_mean<br><br>live_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Liveness: Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of liveness for all track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">loud_mean<br><br>loud_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Loudness: The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of loudness for all track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">pop_mean<br><br>pop_std</td>
+    <td class="tg-yw4l">float<br><br>float</td>
+    <td class="tg-yw4l">Popularity (track): How popular this artist is and measured from 0.0 to 100.0. 100.0 represents most popular.</td>
+    <td class="tg-yw4l">Get the mean/standard deviation of popularity for all track inside one playlist.<br>Need to check the collinearity with pop of artist.</td>
+  </tr>
+  <tr>
+    <td>tracks_num </td>
+    <td>int</td>
+    <td>How many tracks are inside this playlist. From 0 to inf.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>valence_mean <br><br>valence_std</td>
+    <td>float<br><br>float</td>
+    <td>Valence: A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).</td>
+    <td>Get the mean/standard deviation of valence for all track inside one playlist.</td>
+  </tr>
+  <tr>
+    <td>genre_narrow</td>
+    <td>string</td>
+    <td>Genre: From over 130 genres, narrow down to 20 general genres. For example: "pop", "rap", "classical", etc.</td>
+    <td>Later might get dummy variables for this column.</td>
+  </tr>
+</table>
+
+
+    </div>
 
  
   <!-- Packages / Pricing Tables -->
